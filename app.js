@@ -28,7 +28,7 @@ modeSwitch.addEventListener('click', () =>{
 
 const updateTime = () =>{
     // Get current time & calculate degrees for clock hands
-    let date = new jgjhtfDate();
+    let date = new Date();
     const secToDeg = (date.getSeconds() / 60) * 360;
     const minToDeg = (date.getMinutes() / 60) * 360;
     const hrToDeg = (date.getHours() / 12) * 360;
