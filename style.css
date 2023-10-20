@@ -1,0 +1,113 @@
+/* google font - poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", "sans-serif";
+}
+:root{
+    --primary-color: #f6f7fb;
+    --white-color:#fff;
+    --black-color: #18191a;
+    --red-color:#e74c3c;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+}
+body.dark{
+    --primary-color: #242526;
+    --white-color: #18191a;
+    --black-color: #fff;
+    --red-color:#e74c3c;
+    background: #242526;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+.container .clock{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    background: var(--white-color);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1),  0 25px 45px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.clock label{
+    position: absolute;
+    transform: rotate(calc(var(--i) * (360deg / 12)));
+    text-align: center;
+    inset: 20px;         /* inset usefullness */
+}
+.clock label span{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--black-color);
+    transform: rotate(calc(var(--i) * (-360deg / 12)));
+    display: inline-block;
+
+}
+.container .indicator {
+    position: absolute;
+    height: 10px;
+    width: 8px;
+    background-color: red;
+}
+.indicator::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: var(--black-color);
+    border: 4px solid var(--red-color);
+}
+.indicator .hand{
+    position: absolute;
+    height: 130px;
+    width: 4px;
+    bottom: 0;
+    background: var(--red-color);
+    border-radius: 25px;
+    transform-origin: bottom;
+}
+.indicator .hand.minute{
+    height: 120px;
+    width: 5px;
+    background: var(--black-color);
+} 
+.indicator .hand.hour{
+    height: 100px;
+    width: 8px;
+    background: var(--black-color);
+}
+.mode-switch{
+    font-size: 22px;
+    font-weight: 400;
+    display: inline-block;
+    color: var(--white-color);
+    background: var(--black-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) ;
+    cursor: pointer;
+}
+/* @media only screen and (max-width: 600px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0, 30%;
+
+    }
+} */
